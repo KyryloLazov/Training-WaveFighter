@@ -9,16 +9,16 @@ using Zenject;
 public class GameInitializer : MonoBehaviour
 {
     [SerializeField] private GameInitializerView _view;
+    [SerializeField] private WaveConfig _waveConfig;
     
     private CompositeDisposable _disposable = new();
     private WaveSpawner _spawner;
-    private WaveConfig _waveConfig;
+   
 
     [Inject]
-    private void Construct(WaveSpawner spawner, WaveConfig waveConfig)
+    private void Construct(WaveSpawner spawner)
     {
         _spawner = spawner;
-        _waveConfig = waveConfig;
     }
 
     private void OnEnable()
@@ -36,7 +36,7 @@ public class GameInitializer : MonoBehaviour
     {
         foreach (var wave in _waveConfig.Waves)
         {
-            Debug.Log("Starting wave " + wave);
+            _spawner.SpawnWave(wave);
             await UniTask.WaitForSeconds(_waveConfig.TimeOutBtwWaves);
         }
     }

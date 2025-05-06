@@ -420,6 +420,9 @@
 "Assets/Scripts/Factory/Factory.cs"
 "Assets/Scripts/GameInitialize/GameInitializer.cs"
 "Assets/Scripts/GameInitialize/GameInitializerView.cs"
+"Assets/Scripts/Mover/Mover.cs"
+"Assets/Scripts/StateMachine/IState.cs"
+"Assets/Scripts/StateMachine/StateMachine.cs"
 -langversion:9.0
 
 /deterministic

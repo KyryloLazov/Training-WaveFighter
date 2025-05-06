@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584b450615344a198c851edbfc7eae61, type: 3}
   m_Name: BaseEnemy
   m_EditorClassIdentifier: 
+  <EnemyPrefab>k__BackingField: {fileID: 8066805888239283848, guid: 779f1810a7516ad4e9923cbb098b4d8c, type: 3}
   <Health>k__BackingField: 20
   <Damage>k__BackingField: 5
   <Speed>k__BackingField: 3

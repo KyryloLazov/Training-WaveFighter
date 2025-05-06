@@ -11,9 +11,22 @@ public class WaveSpawner
         _enemyConfig = config;
     }
     
-    public void SpawnEnemies(Vector3 position)
+    public void SpawnEnemy(Vector3 position)
     {
         GameObject enemyGO = _factory.SpawnObject(_enemyConfig.EnemyPrefab, position);
         enemyGO.GetComponent<IEnemy>().Initialize(_enemyConfig);
     }
+
+    public void SpawnWave(WaveSettings settings)
+    {
+        for (int i = 0; i < settings.EnemyCount; i++)
+        {
+            Vector3 sphere = Random.insideUnitSphere * settings.RandomPositionOffset;
+            sphere.y = 0f;
+
+            Vector3 spawnPos = settings.SpawnPoint.position + sphere;
+            SpawnEnemy(spawnPos);
+        }
+    }
+
 }
